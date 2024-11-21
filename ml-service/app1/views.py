@@ -91,8 +91,11 @@ def calculate_solar_capacity(appliances, city):
 def calculate_solar(request):
     if request.method == 'POST':
         data = json.loads(request.body)
+        print("data",data)
         city = str(data.get('city'))
-        appliances = data.get('appliances', [])
+        print("city",city)
+        appliances = data.get('applianceList', [])
+        print(appliances)
         # print(appliances)
 
         solar_requirement_kw = calculate_solar_capacity(city=city, appliances=appliances)
@@ -157,24 +160,25 @@ genai.configure(api_key=API_KEY)
 
 @csrf_exempt
 def gen(request):
-    user_message = ""
+    message = ""
     bot_response = ""
 
     if request.method == "POST":
-        user_message = request.POST.get("user_message", "")
-
-        if user_message:
+        message =  json.loads(request.body)
+        # return JsonResponse({"message":message})
+        if message:
             try:
                 model = genai.GenerativeModel("gemini-1.5-flash")
                 response = model.generate_content(f"I know you are not expert just tell me genric answer in just 2 to 3 lines and "
                                                   f"be specific about the answer do not go here and there just say answer nothing else "
                                                   f"dont be in doubt just say one answer i know that answer maybe be "
                                                   f"incorrect but just say answer do not say impossible or hard to say just give me one answer "
-                                                  f"the question is by User: {user_message}")
+                                                  f"when asked about government schemes, give links of government websites for specific"
+                                                  f"the question is by User: {message}")
                 bot_response = response.text if response else "I'm sorry, I couldn't understand that."
 
             except Exception as e:
                 print("Error generating response:", e)
                 bot_response = "There was an error generating a response. Please try again."
 
-    return JsonResponse({"user_message": user_message, "response": bot_response})
+    return JsonResponse({"message": message, "response": bot_response})
