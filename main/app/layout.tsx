@@ -57,7 +57,6 @@ export default function RootLayout({
            enableSystem
            disableTransitionOnChange
         >
-          {<LogoHome/>}
           {children}
         </ThemeProvider>
       </body>

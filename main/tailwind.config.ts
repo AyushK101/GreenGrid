@@ -70,7 +70,10 @@ export default {
       backgroundImage: {
         'hero-bg': "url('../public/bg-hero.jpeg')",
         'section-2': "url(../public/section-2.webp)",
-        'predict': "url(../public/predict-3.png)"
+        'predict': "url(../public/predict-3.png)",
+        'solar': "url('../public/solar.jpg')",
+        'chat': "url('../public/chat.png')",
+        'mid': "url('../public/mid-pic.png')"
       },
     }
   },

@@ -16,9 +16,9 @@ const Header = async () => {
     {/* <motion.div animate={{
     transition: {duration: 2  }
     }}> */}
-      <header className="flex gap-x-4 justify-evenly px-10 md:px-20 py-5 min-w-full">
+      <header className="flex gap-x-4 justify-evenly px-10 md:px-20 py-5 min-w-full ">
           <Link href={'/'}>
-            <Image src={'/logo.png'} alt='logo' width={250} height={150} className="rounded-md w-auto h-auto"/>
+            <Image src={'/logo_black.png'} alt='logo' width={250} height={150} className="rounded-md w-auto h-auto"/>
           </Link>
         <nav className='lg:flex justify-evenly items-center gap-x-5 md:grid md:grid-cols-2 text-center hidden'>
           <HeaderDropdown />
@@ -26,7 +26,7 @@ const Header = async () => {
             <button type='submit' className='button-util'>ENERGY ANALYTICS</button>
           </Link> */}
           <Link href={'/contact'}>
-            <button type='submit' className='button-util'>CONTACT US</button>
+            <button type='submit' className='button-util '>DONATE</button>
           </Link>
           {
             session && session?.user ?  (
@@ -54,6 +54,14 @@ const Header = async () => {
 
       </header>
             {/* </motion.div> */}
+      <div className=" text-white flex flex-col justify-center items-center gap-3 px-4 py-2 my-3 mx-1">
+        <h1 className='text-3xl text-black'>Making Energy Management Smarter Than Ever</h1>
+        <h2 className='max-w-xl text-2xl font-mono font-bold   text-center text-wrap text-black'>"Predict energy needs, plan solar solutions, and save smarter with Photon AI. Your all-in-one platform for efficient, sustainable energy choices."</h2>
+        <h2 className="text-wrap"></h2>
+        <Button className='bg-blue-500 hover:bg-blue-600'>
+          <Link href={`https://www.myscheme.gov.in/schemes/pmsgmb`}>View More</Link>
+        </Button>
+      </div>
     </>
   )
 }

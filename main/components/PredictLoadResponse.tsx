@@ -9,7 +9,7 @@ interface PredictLoadResponseProps {
 const PredictLoadResponse: React.FC<PredictLoadResponseProps> = ({responseData,setShowCard}) => {
  
 // debugger
-  console.log(responseData.cooling_load)
+  // console.log(responseData.cooling_load)
   return (
     <div>
       <div className="absolute top-0 left-0 w-full h-full  z-10 bg-transparent flex items-center justify-center">

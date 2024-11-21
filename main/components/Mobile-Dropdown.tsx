@@ -17,25 +17,25 @@ const MobileDropdown = async () => {
             <DropdownMenuTrigger><Menu className="text-white" size={55} /></DropdownMenuTrigger>
             <DropdownMenuContent>
             ;
-            <DropdownMenuItem className='min-w-full'>
-                <Link href={'/energy'}>
+            {/* <DropdownMenuItem className='min-w-full'>
+                <Link href={'chat'}>
                 <Button type='submit' size={'dropdown'} >Energy Analytics</Button>
               </Link>
-            </DropdownMenuItem>
+            </DropdownMenuItem> */}
             
             <DropdownMenuItem className='min-w-full'>
                 <Link href={'/'}>
-                <Button type='submit' className='min-w-full m-0' >Load Predictor</Button>
+                <Button type='submit' className='min-w-full m-0 bg-green-400' >Load Predictor</Button>
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-                <Link href={'/contact'}>
+                <Link href={'/solar'}>
                 <Button type='submit' size={'dropdown'} >Solar Calculator</Button>
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-                <Link href={'/contact'}>
-                <Button type='submit' size={'dropdown'} className='min-w-full' >Contact Us</Button>
+                <Link href={'/donation'}>
+                <Button type='submit' size={'dropdown'} className='min-w-full' >DONATE</Button>
               </Link>
             </DropdownMenuItem>
 

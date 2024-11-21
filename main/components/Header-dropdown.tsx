@@ -25,17 +25,17 @@ const HeaderDropdown = () => {
             <DropdownMenuSeparator />
             <DropdownMenuItem >
                 <Link href={'/predict'}>
-                <button type='submit' className='min-w-full dropdown-button' >Load Predictor</button>
+                <Button type='submit' className='min-w-full dropdown-button bg-green-500' >Load Predictor</Button>
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-                <Link href={'/contact'}>
-                <button type='submit'    className='min-w-full dropdown-button'>Solar Calculator</button>
+                <Link href={'/solar'}>
+                <Button type='submit'    className='min-w-full dropdown-button'>Solar Calculator</Button>
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem >
-                <Link href={'/energy'}>
-                <button type='submit'   className='min-w-full dropdown-button'>Solar Chatbot</button>
+                <Link href={'/chat'}>
+                <Button type='submit'   className='min-w-full dropdown-button'>GreenGrid Chatbot</Button>
               </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
