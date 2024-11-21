@@ -2,7 +2,7 @@
 import { predictLoadType } from "@/types/predictType";
 import axios from 'axios'
 
-export const  predictApi = async (values: predictLoadType) {
+export const  predictApi = async (values: predictLoadType) => {
   const processedValues = {
     relativeCompactNess: parseFloat(values.relativeCompactNess),
     surfaceArea: parseFloat(values.surfaceArea),

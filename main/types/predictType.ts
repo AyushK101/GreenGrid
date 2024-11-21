@@ -20,3 +20,5 @@ export type predictLoadType = z.infer<typeof predictSchema>;
  * 4 = South
  * 5 = West
  */
+
+export type resType = { heating_load: string, cooling_load: string, fan_hours: string, ac_hours: string }

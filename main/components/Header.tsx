@@ -18,7 +18,7 @@ const Header = async () => {
     }}> */}
       <header className="flex gap-x-4 justify-evenly px-10 md:px-20 py-5 min-w-full">
           <Link href={'/'}>
-            <Image src={'/logo.png'} alt='logo' width={250} height={150} className="rounded-md"/>
+            <Image src={'/logo.png'} alt='logo' width={250} height={150} className="rounded-md w-auto h-auto"/>
           </Link>
         <nav className='lg:flex justify-evenly items-center gap-x-5 md:grid md:grid-cols-2 text-center hidden'>
           <HeaderDropdown />

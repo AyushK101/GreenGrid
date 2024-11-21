@@ -1,8 +1,8 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { predictSchema } from '@/types/predictType'
+import { predictSchema, resType } from '@/types/predictType'
 import { 
   Form,
   FormControl,
@@ -18,10 +18,16 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import Link from 'next/link'
 import { Button } from './ui/button'
 import { predictLoadType } from "@/types/predictType";
-import { vettom } from '@/app/layout'
+import axios from 'axios'
+import PredictLoadResponse from '@/components/PredictLoadResponse';
+
+
 
 
 const PredictLoad = () => {
+  const [showCard,setShowCard] = useState(false)!;
+  const [res, setRes] = useState<resType>({heating_load:"0",ac_hours:"0",cooling_load:"0",fan_hours:"0"});
+
   const form= useForm({
     resolver: zodResolver(predictSchema),
     defaultValues: {
@@ -37,11 +43,30 @@ const PredictLoad = () => {
   })
 
   async function handleSubmitForm(values: predictLoadType) {
+    const data = {
+      relativeCompactNess: parseFloat(values.relativeCompactNess),
+      surfaceArea: parseFloat(values.surfaceArea),
+      wallArea: parseFloat(values.wallArea),
+      roofArea: parseFloat(values.roofArea),
+      overallHeight: parseFloat(values.overallHeight),
+      orientation: values.orientation as "East" | "North" | "South" | "West", // Cast to enum
+      glazingArea: parseFloat(values.glazingArea),
+      distribution: parseFloat(values.distribution),
+    };
+
+    const {data: res}: {data: resType} = await axios.post("http://localhost:9000/predict_view/",data)
+    console.log(res)
+    setShowCard(true)
+    setRes(res)
+
+
     
     console.log(values);
     
   }
   return (
+  <>
+    {showCard && res && (<PredictLoadResponse responseData={res} setShowCard={setShowCard} />)}
     <div className={`bg-predict h-screen bg-cover flex flex-col items-center pt-3 `}>
       <h1 className='text-4xl font-bold text-earthlyBrown px-4 text-wrap text-center'>Predict Building Energy Loads</h1>
       {"  "}
@@ -115,29 +140,7 @@ const PredictLoad = () => {
             </FormItem>
           )}
         />
-        {/* <FormField
-          control={form.control}
-          name="orientation"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className='text-lg'>Orientation</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
-              <FormControl>
-              <SelectTrigger>
-                    <SelectValue placeholder="select orientation" />
-                  </SelectTrigger>
-                  <SelectContent>
-                  <SelectItem value="2">North</SelectItem>
-                  <SelectItem value="3">East</SelectItem>
-                  <SelectItem value="4">South</SelectItem>
-                  <SelectItem value="5">West</SelectItem>
-                </SelectContent>
-              </FormControl>
-              </Select>
-              <FormMessage />
-            </FormItem>
-          )}
-        /> */}
+        
         <FormField
           control={form.control}
           name="orientation"
@@ -199,6 +202,7 @@ const PredictLoad = () => {
       </Form> 
 
     </div>
+  </>
   )
 }
 
