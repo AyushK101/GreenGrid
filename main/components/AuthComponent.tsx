@@ -11,11 +11,11 @@ const AuthComponent = async () => {
       {
             session && session?.user ?  (
               <form className='min-w-full' action={signoutAction}>
-                <Button type='submit' size={'lg'}>LOGOUT</Button>
+                <Button type='submit' size={'lg'}   className='!bg-green-400'>LOGOUT</Button>
               </form>
             ) : (
               <form action={signinAction}>
-                <Button type='submit' size={'lg'}>LOGIN</Button>
+                <Button type='submit' size={'lg'}  className='!bg-green-400'>LOGIN</Button>
               </form>
             ) 
           }

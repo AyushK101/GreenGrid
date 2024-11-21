@@ -15,13 +15,13 @@ import { ThemeProvider } from "@/components/theme-provider"
 // });
 
 
-export const poppins = localFont({
-  src: "./fonts/Poppins-Black.ttf",
-  variable: "--poppins",
-  weight: "200",
-})
+// const poppins = localFont({
+//   src: "./fonts/Poppins-Black.ttf",
+//   variable: "--poppins",
+//   weight: "200",
+// })
 
-export const outfit = localFont({
+const outfit = localFont({
   src: "./fonts/Outfit-VariableFont_wght.ttf",
   variable: "--outfit",
   weight: "400"

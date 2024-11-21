@@ -59,9 +59,9 @@ const Header = async () => {
             {/* </motion.div> */}
       <div className=" text-white flex flex-col justify-center items-center gap-3 px-4 py-2 my-3 mx-1">
         <h1 className='text-4xl text-earthlyBrown mb-5 font-extrabold'>&quot;Making Energy Management Smarter Than Ever&quot;</h1>
-        <h2 className='max-w-xl text-2xl font-mono font-bold   text-center text-wrap text-black mt-10 px-3 relative left-9'>&quot;Predict energy needs, plan solar solutions, and save smarter with Photon AI. Your all-in-one platform for efficient, sustainable energy choices.&quot;</h2>
-        <Button className='bg-blue-500 hover:bg-blue-600 relative z-10 ' size={'lg'}>
-          <Link href={`https://www.myscheme.gov.in/schemes/pmsgmb`} className='text-lg'>View More</Link>
+        <h2 className='max-w-xl text-2xl font-mono font-bold   text-center text-wrap text-black'>&quot;Predict energy needs, plan solar solutions, and save smarter with Photon AI. Your all-in-one platform for efficient, sustainable energy choices.&quot;</h2>
+        <Button className='bg-blue-500 hover:bg-blue-600'>
+          <Link href={`https://www.myscheme.gov.in/schemes/pmsgmb`}>View More</Link>
         </Button>
       </div>
     </>

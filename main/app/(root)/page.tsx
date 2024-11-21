@@ -2,6 +2,8 @@ import Header from "@/components/Header"
 import GenericSection from "@/components/GenericSection";
 import { genericType } from "@/types/genericSectionType";
 import Footer from "@/components/Footer";
+import { Suspense } from "react";
+import Loader from "@/components/Loadder";
 
 const config: genericType[] = [
   {
@@ -36,6 +38,7 @@ const config: genericType[] = [
 export default function Home() {
   return (
     <>
+    <Suspense fallback={<Loader/>}>
       <section className="bg-section-2 bg-no-repeat bg-center bg-cover min-h-screen">
         <Header />
       </section>
@@ -48,6 +51,7 @@ export default function Home() {
         })}
       </section>
       <Footer />
+      </Suspense>
     </>
 
   );
