@@ -1,7 +1,7 @@
 "use client"
 import axios from "axios";
+import Image from "next/image";
 import React, { useState } from "react";
-import { useFormStatus } from "react-dom";
 
 // Define the types for the props and state
 type ChatProps = {
@@ -50,8 +50,8 @@ const ChatComponent: React.FC<ChatProps> = () => {
         {/* Loading Spinner */}
         { false && (
           <div className="loading-spinner flex justify-center ">
-            <img
-              src="https://i.gifer.com/ZZ5H.gif"
+            <Image
+              src="./loader.gif"
               alt="Loading..."
               className="w-12 h-12"
             />

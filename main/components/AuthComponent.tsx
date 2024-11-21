@@ -1,10 +1,10 @@
 import React from 'react'
-import { auth, signIn, signOut } from '@/auth'
+import { auth, } from '@/auth'
 import { Button } from './ui/button';
 import { signinAction, signoutAction } from '@/actions/auth';
 
 
-const AuthComponent = async ({text}: {text?: string}) => {
+const AuthComponent = async () => {
   const session = await auth();
   return (
     <div>

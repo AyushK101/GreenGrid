@@ -6,16 +6,13 @@ import { predictSchema, resType } from '@/types/predictType'
 import { 
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { z } from 'zod'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
-import Link from 'next/link'
 import { Button } from './ui/button'
 import { predictLoadType } from "@/types/predictType";
 import axios from 'axios'

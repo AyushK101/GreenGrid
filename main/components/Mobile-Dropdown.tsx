@@ -1,7 +1,6 @@
-import { auth, signIn, signOut } from '@/auth'
+import { auth } from '@/auth'
 import React from 'react'
 import { Button } from './ui/button'
-import HeaderDropdown from './Header-dropdown'
 import Link from 'next/link'
 import { DropdownMenu } from '@radix-ui/react-dropdown-menu'
 import { DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu'

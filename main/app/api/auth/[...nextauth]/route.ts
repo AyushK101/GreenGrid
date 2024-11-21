@@ -1,6 +1,3 @@
-import { NextRequest } from "next/server";
-
-import { authType } from "@/types/authType";
 import { handlers } from "@/auth";
 
 // export function GET(req: NextRequest, {nextauth}: authType ) {

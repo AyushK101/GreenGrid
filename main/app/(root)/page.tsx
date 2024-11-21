@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Header from "@/components/Header"
 import GenericSection from "@/components/GenericSection";
 import { genericType } from "@/types/genericSectionType";
@@ -38,18 +37,18 @@ export default function Home() {
   return (
     <>
       <section className="bg-section-2 bg-no-repeat bg-center bg-cover min-h-screen">
-      <Header/>    
-    </section>
-    <section className="flex justify-center ">
-    <section className="relative  bottom-36 bg-no-repeat  bg-mid min-h-80 min-w-80 "></section>
-    </section>
-    <section className="s-2 h-screen mx-auto max-w-3xl">
-      {config.map( s=> {
-        return <GenericSection key={s.t1} {...s}/>
-      })}
-    </section>
-    {/* <Footer/> */}
+        <Header />
+      </section>
+      <section className="flex justify-center ">
+        <section className="relative  bottom-36 bg-no-repeat  bg-mid min-h-80 min-w-80 "></section>
+      </section>
+      <section className=" mx-auto max-w-3xl">
+        {config.map(s => {
+          return <GenericSection key={s.t1} {...s} />
+        })}
+      </section>
+      <Footer />
     </>
-    
+
   );
 }

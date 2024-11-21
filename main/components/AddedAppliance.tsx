@@ -1,5 +1,4 @@
 import React from 'react'
-import { ApplianceListType } from '@/types/solarType'
 
 import { AddedApplianceType } from '@/types/solarType'
 import { Button } from './ui/button'
@@ -17,7 +16,7 @@ const AddedAppliance = ({applianceList, setApplianceList}: AddedApplianceType) =
       <div id="applianceList" className="mt-4">
            <h2 className="text-xl font-semibold mb-2">Added Appliances:</h2>
            {applianceList.length > 0 ? (
-             applianceList.map((item, index) => (
+             applianceList.map((item) => (
                <div
                  key={item.id}
                  className="flex items-center justify-between border-b py-2"

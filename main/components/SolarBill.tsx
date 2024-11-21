@@ -9,7 +9,7 @@ import SolarPredictResponse from './SolarPredictResponse'
 
 
 const SolarBill = () => {
-   let clx = "bg-solar min-h-screen min-w-screen bg-cover bg-no-repeat  "
+   const clx = "bg-solar min-h-screen min-w-screen bg-cover bg-no-repeat  "
    const [city,setCity] = useState("");
    const [applianceList, setApplianceList] = useState<ApplianceListType[]>([]);
    const [appliance, setAppliance] = useState("");

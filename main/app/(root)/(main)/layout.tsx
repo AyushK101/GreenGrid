@@ -6,6 +6,7 @@ const layout = ({children}: {children: React.ReactNode}) => {
     <div>
       {<LogoHome/>}
       {children}
+
     </div>
   )
 }

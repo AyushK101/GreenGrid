@@ -2,11 +2,9 @@ import { auth, signIn, signOut } from '@/auth'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { ModeToggle } from './theme-toggle'
 import { Button } from './ui/button'
 import HeaderDropdown from './Header-dropdown'
 import MobileDropdown from './Mobile-Dropdown'
-import {motion} from 'framer-motion'
 
 const Header = async () => {
   const session = await auth()
@@ -17,6 +15,11 @@ const Header = async () => {
     transition: {duration: 2  }
     }}> */}
       <header className="flex gap-x-4 justify-evenly px-10 md:px-20 py-5 min-w-full ">
+        <div className='absolute left-4'>
+        <Link href={`https://www.kiet.edu/`}>
+          <Image src={'/kiet.png'} height={100} width={100} alt='kiet-logo' />
+        </Link>
+        </div>
           <Link href={'/'}>
             <Image src={'/logo_black.png'} alt='logo' width={250} height={150} className="rounded-md w-auto h-auto"/>
           </Link>
@@ -55,11 +58,10 @@ const Header = async () => {
       </header>
             {/* </motion.div> */}
       <div className=" text-white flex flex-col justify-center items-center gap-3 px-4 py-2 my-3 mx-1">
-        <h1 className='text-3xl text-black'>Making Energy Management Smarter Than Ever</h1>
-        <h2 className='max-w-xl text-2xl font-mono font-bold   text-center text-wrap text-black'>"Predict energy needs, plan solar solutions, and save smarter with Photon AI. Your all-in-one platform for efficient, sustainable energy choices."</h2>
-        <h2 className="text-wrap"></h2>
-        <Button className='bg-blue-500 hover:bg-blue-600'>
-          <Link href={`https://www.myscheme.gov.in/schemes/pmsgmb`}>View More</Link>
+        <h1 className='text-4xl text-earthlyBrown mb-5 font-extrabold'>&quot;Making Energy Management Smarter Than Ever&quot;</h1>
+        <h2 className='max-w-xl text-2xl font-mono font-bold   text-center text-wrap text-black mt-10 px-3 relative left-9'>&quot;Predict energy needs, plan solar solutions, and save smarter with Photon AI. Your all-in-one platform for efficient, sustainable energy choices.&quot;</h2>
+        <Button className='bg-blue-500 hover:bg-blue-600 relative z-10 ' size={'lg'}>
+          <Link href={`https://www.myscheme.gov.in/schemes/pmsgmb`} className='text-lg'>View More</Link>
         </Button>
       </div>
     </>
